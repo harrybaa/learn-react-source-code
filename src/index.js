@@ -1,10 +1,12 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ReactDOM from './kreact/react-dom';
+// import ReactDOM from './kreact/react-dom';
 import Component from './kreact/component';
+import DomProvider from './DomProvider';
+import TreeRoot from './TreeRoot';
 
 function FunctionComponet(props) {
   return (
@@ -39,8 +41,14 @@ const JSX = (
   </div>
 );
 
+const root = (
+  <DomProvider>
+    <TreeRoot />
+  </DomProvider>
+)
+
 ReactDOM.render(
-  JSX,
+  root,
   document.getElementById('root')
 );
 
